@@ -14,6 +14,13 @@ public class StudienprojektApplication {
 	{
 		return "Studienarbeit Testprojekt Nitin Kishore";
 	}
+
+
+	@GetMapping("/studienarbeit")
+	public String spesificStudienarbeitOutput()
+	{
+		return "Studienarbeit DevOps Spring Boot Testprojekt Nitin Kishore";
+	}
 	public static void main(String[] args) {
 		SpringApplication.run(StudienprojektApplication.class, args);
 	}
