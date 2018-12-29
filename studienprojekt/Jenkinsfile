@@ -1,34 +1,20 @@
 pipeline {
     agent any
+
     stages {
-        stage ('Clone') {
+        stage('Build') {
             steps {
-                echo 'Cloning Repo'
-            }          
-        }
-        stage ('Clean') {
-            steps {
-                echo 'Cleaning...'                    
+                echo 'Building..'
             }
         }
-        stage ('Package') {
+        stage('Test') {
             steps {
-                echo 'Packaging application'
+                echo 'Testing..'
             }
         }
-        stage ('Docker image') {
+        stage('Deploy') {
             steps {
-                echo 'Building docker image'
-            }
-        }
-        stage ('Docker container') {
-            steps {
-                echo 'Starting docker container'
-            }
-        }
-        stage ('User acceptance test') {
-            steps {
-                input('Do you want to proceed and publish?')
+                echo 'Deploying....'
             }
         }
     }
