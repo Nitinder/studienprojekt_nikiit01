@@ -8,22 +8,22 @@ pipeline {
         }
         stage ('Clean') {
             steps {
-                'echo Cleaning...'                    
+                bat 'echo Cleaning...'                    
             }
         }
         stage ('Package') {
             steps {
-                'echo Packaging application'
+                bat 'echo Packaging application'
             }
         }
         stage ('Docker image') {
             steps {
-                'echo Building docker image'
+                bat 'echo Building docker image'
             }
         }
         stage ('Docker container') {
             steps {
-                'echo Starting docker container'
+                bat 'echo Starting docker container'
             }
         }
         stage ('User acceptance test') {
