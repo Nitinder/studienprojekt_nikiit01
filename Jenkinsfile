@@ -3,17 +3,29 @@ pipeline {
     stages {
         stage ('Clone') {
             steps {
-                bat 'echo Cloning Repo'
+                bat 'echo Pulled Repo!'
             }          
         }
         stage ('Clean') {
             steps {
-                bat 'echo Cleaning...'                    
+                bat '''
+                cd ..\Studienarbeit_Pipeline\studienprojekt
+                echo Cleaning...
+                mvn clean
+                '''                    
             }
         }
         stage ('Package') {
             steps {
-                bat 'echo Packaging application'
+                bat '''
+                echo Packaging application
+                mvn package
+                '''
+            }
+        }
+        stage ('Test') {
+            steps {
+                bat 'echo Testing application'
             }
         }
         stage ('Docker image') {
