@@ -18,24 +18,37 @@ pipeline {
         stage ('Package') {
             steps {
                 bat '''
-                echo Packaging application
+                cd studienprojekt
+                echo Packaging application...
                 mvn package
                 '''
             }
         }
         stage ('Test') {
             steps {
-                bat 'echo Testing application'
+                bat '''
+                cd studienprojekt
+                echo Testing application
+                mvn test
+                '''
             }
         }
         stage ('Docker image') {
             steps {
-                bat 'echo Building docker image'
+                bat '''
+                cd studienprojekt
+                echo Building docker image
+                docker build -f Dockerfile -t studienprojekt_application_devops .
+                '''
             }
         }
         stage ('Docker container') {
             steps {
-                bat 'echo Starting docker container'
+                bat '''
+                cd studienprojekt
+                echo Starting docker container
+                docker run -p 8085:8085 studienprojekt_application_devops
+                '''
             }
         }
         stage ('User acceptance test') {
