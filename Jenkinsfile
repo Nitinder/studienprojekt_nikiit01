@@ -9,7 +9,7 @@ pipeline {
         stage ('Clean') {
             steps {
                 bat '''
-                cd ../Studienarbeit_Pipeline/studienprojekt
+                dir
                 echo Cleaning...
                 mvn clean
                 '''                    
