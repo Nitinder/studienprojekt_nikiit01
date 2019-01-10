@@ -47,7 +47,7 @@ pipeline {
                 bat '''
                 cd studienprojekt
                 echo Starting docker container
-                docker run -p 8085:8085 studienprojekt_application_devops
+                docker run -d -p 8085:8085 studienprojekt_application_devops
                 '''
             }
         }
