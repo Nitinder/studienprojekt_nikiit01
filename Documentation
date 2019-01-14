@@ -1,6 +1,12 @@
-This file explains what the application does.
+Studienproject for Softwaretechnik (Hochschule Esslingen) from Nitin Kishore
+This file explains what the project is for.
 
+Simple SpringBoot application with Maven.
 
 Rest services:
 - localhost:8085/   
 - localhost:8085/studienprojekt
+
+Contains a Dockerfile which uses latest jdk image, builds jar file of application and exposes it on port 8085.
+
+There is also used a Jenkinsfile which contains a build pipeline with the steps from maven package to building an running a docker image/container.
